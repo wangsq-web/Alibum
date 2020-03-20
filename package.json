@@ -1,0 +1,23 @@
+{
+  "name": "alibum",
+  "version": "1.0.0",
+  "description": "index.js server 表单post 上传文件 + 静态文件服务",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wangsq-web/Alibum.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wangsq-web/Alibum/issues"
+  },
+  "homepage": "https://github.com/wangsq-web/Alibum#readme",
+  "dependencies": {
+    "formidable": "^1.2.2",
+    "silly-datetime": "^0.1.2"
+  }
+}
