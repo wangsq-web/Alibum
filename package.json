@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/wangsq-web/Alibum#readme",
   "dependencies": {
-    "formidable": "^1.2.2",
-    "silly-datetime": "^0.1.2"
+    "ejs": "^3.0.1",
+    "express": "^4.17.1"
   }
 }
