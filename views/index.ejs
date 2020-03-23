@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 用最新的IE浏览 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>相册</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <h1>你好，世界！</h1>
+    <% for( var i = 0 ; i < albums.length ; i++ ){ %>
+      <p><%= albums[i] %></p>
+    <% } %>
+
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

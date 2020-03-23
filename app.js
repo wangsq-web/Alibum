@@ -7,7 +7,7 @@ app.set("view engine","ejs");
 
 // 路由中间件
 // 静态页面
-app.use("/static",express.static("./public"));
+app.use(express.static("./public"));
 // 首页
 app.get("/",router.showIndex);
 
