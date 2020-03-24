@@ -13,6 +13,16 @@ exports.showIndex = function(req,res){
     })
 }
 
-exports.showAlbum = function(req,res){
-    res.send("相册名字："+ req.params.albumName)
+exports.showAlbum = function(req,res,next){
+    var albumName = req.params.albumName;
+    file.getAllImagesByAlbumName(albumName,function(err,imagesArray){
+        if(err){
+            next()
+            return
+        }
+        res.render("album",{
+            "albumName": albumName,
+            "images": imagesArray
+        })
+    })
 }

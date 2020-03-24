@@ -7,12 +7,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>相册</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      .flex{
+        display: flex;
+        flex-wrap: wrap;
+        /* justify-content: space-around; */
+      }
+      img{
+        width: 400px;
+        height: 400px;
+      }
+    </style>
   </head>
   <body>
     <h1>我的相册</h1>
-    <% for( var i = 0 ; i < albums.length ; i++ ){ %>
-      <p><a href="<%= albums[i] %>"><i><%= albums[i] %></i></a></p>
-    <% } %>
+    <p><a href="/">全部相册</a> / <a href="#"><%= albumName %></a></p>
+    <p class="flex">
+      <% for( var i = 0 ; i < images.length ; i++ ){ %>
+        <img src="<%= images[i] %>"></img>
+      <% } %>
+    </p>
 
     <script src="js/jquery-1.9.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>

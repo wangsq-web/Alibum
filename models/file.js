@@ -18,5 +18,26 @@ exports.getAllalbums = function(callback){
             })
         })(0)
     })
-    
+}
+exports.getAllImagesByAlbumName = function(albumName,callback){
+    fs.readdir("./uploads/"+albumName,function(err,files){
+        if(err){
+            callback("找不到文件",null)
+            return
+        }
+        var allImages = [];
+        (function iterator(i){
+            if(i == files.length){
+                // 结束
+                callback(null,allImages)
+                return
+            }
+            fs.stat("./uploads/"+albumName+"/"+files[i],function(err,stats){
+                if(stats.isFile()){
+                    allImages.push(files[i])
+                }
+                iterator(i+1);
+            })
+        })(0)
+    })
 }
