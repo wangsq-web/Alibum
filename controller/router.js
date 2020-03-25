@@ -26,3 +26,21 @@ exports.showAlbum = function(req,res,next){
         })
     })
 }
+
+exports.upAlbum = function(req,res,next){
+
+  file.getAllalbums(function(allAlbums){
+    if(err){
+        next()
+        return
+    }
+    res.render("upload",{
+        "albums": allAlbums
+    })
+  })
+}
+
+exports.upFile = function(req,res,next){
+  
+  var form = formidable({ multiples: true, uploadDir: __dirname + '/upload' })
+}

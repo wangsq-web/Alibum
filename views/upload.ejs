@@ -30,20 +30,42 @@
         width: 250px;
         height: 250px;
       }
+      select{
+        width: 100px;
+        height: 30px;
+      }
+      option{
+        height: 30px;
+        padding: 30px;
+      }
+      .center input{
+        display: inline-block;
+        width: 200px;
+      }
     </style>
   </head>
   <body>
-    <h1 class="center">我的相册</h1>
-    <div class="flex">
-    <% for( var i = 0 ; i < albums.length ; i++ ){ %>
-      <a class="box" href="<%= albums[i] %>">
-        <img src="/02/wenjianjia.jpg" alt=""> <br>
-        <i><%= albums[i] %></i>
-      </a>
-    <% } %>
-    </div>
+    <h1 class="center">上传到我的相册</h1>
+
+    <p class="center">
+      请选择相册
+      <select onchange="getFolderName">
+        <% for( var i = 0 ; i < albums.length ; i++ ){ %>
+          <option value="<%= albums[i] %>"><%= albums[i] %></option>
+        <% } %>
+      </select>
+    </p>
+    <form action="/upload" method="post">
+      <p class="center"><input type="file" name="file" /></p>
+      <p class="center"><input type="submit" /></p>
+    </form>
 
     <script src="/js/jquery-1.9.1.min.js"></script>
     <script src="/js/bootstrap.js"></script>
+    <script>
+      function getFolderName(e){
+        console.log(e)
+      }
+    </script>
   </body>
 </html>
