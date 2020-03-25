@@ -7,12 +7,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>相册</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style>    
+      body{
+        margin: 0;
+        padding: 0;
+        background: #f2f2f2;
+      }
+      .center{
+        text-align: center;
+      }
+      .flex{
+        display: flex;
+        justify-content: space-around;
+      }
+      .box{
+        display: inline-block;
+        text-align: center;
+        background: #fff;
+        padding: 30px;
+      }
+      .box img{
+        width: 250px;
+        height: 250px;
+      }
+    </style>
   </head>
   <body>
-    <h1>我的相册</h1>
+    <h1 class="center">我的相册</h1>
+    <div class="flex">
     <% for( var i = 0 ; i < albums.length ; i++ ){ %>
-      <p><a href="<%= albums[i] %>"><i><%= albums[i] %></i></a></p>
+      <a class="box" href="<%= albums[i] %>">
+        <img src="/02/wenjianjia.jpg" alt=""> <br>
+        <i><%= albums[i] %></i>
+      </a>
     <% } %>
+    </div>
 
     <script src="js/jquery-1.9.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>

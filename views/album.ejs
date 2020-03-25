@@ -8,25 +8,45 @@
     <title>相册</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <style>
+      body{
+        margin: 0;
+        padding: 0;
+        background: #f2f2f2;
+      }
+      .center{
+        text-align: center;
+      }
       .flex{
         display: flex;
         flex-wrap: wrap;
-        /* justify-content: space-around; */
+        justify-content: space-around;
       }
-      img{
+      .img{
         width: 400px;
         height: 400px;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+      }
+      .img img{
+        width: 400px;
+        vertical-align: middle;
       }
     </style>
   </head>
   <body>
-    <h1>我的相册</h1>
-    <p><a href="/">全部相册</a> / <a href="#"><%= albumName %></a></p>
-    <p class="flex">
+    <h1 class="center">我的相册</h1>
+    <p class="center"><a href="/">全部相册</a> / <a href="#"><%= albumName %></a></p>
+    <div class="flex">
       <% for( var i = 0 ; i < images.length ; i++ ){ %>
-        <img src="<%= images[i] %>"></img>
+        <div class="img">
+          <a href="<%= images[i] %>">
+            <img src="<%= images[i] %>"></img>
+          </a>
+        </div>
       <% } %>
-    </p>
+    </div>
 
     <script src="js/jquery-1.9.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
