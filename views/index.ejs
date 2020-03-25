@@ -33,7 +33,10 @@
     </style>
   </head>
   <body>
-    <h1 class="center">我的相册</h1>
+    <h3 class="center">我的相册</h3>
+
+    <p class="center"><a href="/upload">上传照片</a></p>
+
     <div class="flex">
     <% for( var i = 0 ; i < albums.length ; i++ ){ %>
       <a class="box" href="<%= albums[i] %>">

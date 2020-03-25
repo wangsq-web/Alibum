@@ -16,19 +16,9 @@
       .center{
         text-align: center;
       }
-      .flex{
-        display: flex;
-        justify-content: space-around;
-      }
-      .box{
-        display: inline-block;
-        text-align: center;
-        background: #fff;
-        padding: 30px;
-      }
-      .box img{
+      form{
         width: 250px;
-        height: 250px;
+        margin: 50px auto 0;
       }
       select{
         width: 100px;
@@ -40,32 +30,33 @@
       }
       .center input{
         display: inline-block;
-        width: 200px;
+        width: 100%;
       }
     </style>
   </head>
   <body>
-    <h1 class="center">上传到我的相册</h1>
+    <h3 class="center">上传到我的相册</h3>
+    <p class="center"><a href="/">全部相册</a></p>
 
-    <p class="center">
-      请选择相册
-      <select onchange="getFolderName">
-        <% for( var i = 0 ; i < albums.length ; i++ ){ %>
-          <option value="<%= albums[i] %>"><%= albums[i] %></option>
-        <% } %>
-      </select>
-    </p>
-    <form action="/upload" method="post">
-      <p class="center"><input type="file" name="file" /></p>
+    <form action="" method="post" enctype="multipart/form-data">
+      <p>
+        请选择相册
+        <select name="albumName">
+          <% for( var i = 0 ; i < albums.length ; i++ ){ %>
+            <option value="<%= albums[i] %>"><%= albums[i] %></option>
+          <% } %>
+        </select>
+      </p>
+      <p><input type="file" name="tupian" /></p>
       <p class="center"><input type="submit" /></p>
     </form>
 
     <script src="/js/jquery-1.9.1.min.js"></script>
     <script src="/js/bootstrap.js"></script>
     <script>
-      function getFolderName(e){
-        console.log(e)
-      }
+      $('select').on('change', function() {
+        console.log( this.value );
+      });
     </script>
   </body>
 </html>

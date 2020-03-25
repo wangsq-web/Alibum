@@ -12,10 +12,10 @@ app.use(express.static("./uploads"));
 // 首页
 app.get("/",router.showIndex);
 
+app.get("/:albumName",router.showAlbum)
+
 app.get("/upload",router.upAlbum)
 app.post("/upload",router.upFile)
-
-app.get("/:albumName",router.showAlbum)
 
 app.use(function(req,res){
     res.render("err")
